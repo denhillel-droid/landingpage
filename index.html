@@ -30,13 +30,11 @@
         .reveal { opacity: 0; transform: translateY(20px); transition: all 0.8s cubic-bezier(0.4, 0, 0.2, 1); }
         .reveal.active { opacity: 1; transform: translateY(0); }
         
-        /* Access Panel */
         #ax-panel { position: fixed; top: 0; right: -400px; width: 340px; height: 100vh; background: #fff; color: #000; box-shadow: -15px 0 50px rgba(0,0,0,0.8); z-index: 100005; transition: right 0.5s cubic-bezier(0.16, 1, 0.3, 1); overflow-y: auto; }
         #ax-panel.open { right: 0; }
         .ax-btn { background: #f1f5f9; border: 1px solid #e2e8f0; padding: 12px; border-radius: 8px; display: flex; flex-direction: column; align-items: center; cursor: pointer; font-size: 0.8rem; font-weight: 800; color: #1e293b; gap: 8px; transition: 0.2s; }
         .ax-btn.active { background: #0056b3; color: white; }
 
-        /* Notification */
         #live-notify { position: fixed; bottom: 100px; right: 25px; background: white; color: black; padding: 12px 18px; border-radius: 12px; display: flex; align-items: center; gap: 12px; box-shadow: 0 20px 40px rgba(0,0,0,0.4); z-index: 99999; transform: translateX(180%); transition: 0.6s cubic-bezier(0.16, 1, 0.3, 1); }
         #live-notify.show { transform: translateX(0); }
 
@@ -47,7 +45,6 @@
         .quiz-step.active { display: block; animation: fIn 0.4s ease-out; }
         @keyframes fIn { from { opacity: 0; transform: translateY(10px); } to { opacity: 1; transform: translateY(0); } }
 
-        .img-container-story img { object-position: top center; }
         details summary::-webkit-details-marker { display: none; }
     </style>
 </head>
@@ -70,7 +67,7 @@
         <i class="fa-solid fa-universal-access text-xl"></i>
     </button>
 
-    <!-- WhatsApp Floating (Right Bottom) -->
+    <!-- WhatsApp Floating -->
     <a href="https://wa.me/972509397100?text=%D7%94%D7%99%D7%99%20%D7%93%D7%9F%2C%20%D7%94%D7%92%D7%A2%D7%AA%D7%99%20%D7%90%D7%9C%20%D7%94%D7%90%D7%AA%D7%A8%20%D7%95%D7%90%D7%A9%D7%9E%D7%97%20%D7%9C%D7%A9%D7%9E%D7%95%D7%A2%20%D7%A4%D7%A8%D7%98%D7%99%D7%9D%20%D7%A2%D7%9C%20%D7%94%D7%9C%D7%99%D7%95%D7%95%D7%99%20%D7%A9%D7%9C%D7%9A" target="_blank" class="fixed bottom-8 right-8 z-[100000] bg-whatsapp text-white w-16 h-16 rounded-full flex items-center justify-center text-4xl shadow-2xl hover:scale-110 transition animate-pulse" aria-label="וואטסאפ">
         <i class="fa-brands fa-whatsapp"></i>
     </a>
@@ -106,11 +103,11 @@
         </div>
     </nav>
 
-    <!-- SECTION 1: HERO -->
-    <header class="min-h-screen flex items-center justify-center text-center p-6 relative italic italic">
+    <!-- HERO -->
+    <header class="min-h-screen flex items-center justify-center text-center p-6 relative italic">
         <div class="reveal max-w-5xl">
-            <h1 class="text-6xl md:text-8xl font-black mb-8 italic uppercase leading-none italic italic">נמאס לך להיות <br> <span class="text-primary italic italic">הכי רזה בחדר?</span></h1>
-            <p class="text-xl md:text-2xl text-zinc-400 mb-12 max-w-2xl mx-auto italic font-bold leading-relaxed italic italic">
+            <h1 class="text-6xl md:text-8xl font-black mb-8 italic uppercase leading-none">נמאס לך להיות <br> <span class="text-primary italic">הכי רזה בחדר?</span></h1>
+            <p class="text-xl md:text-2xl text-zinc-400 mb-12 max-w-2xl mx-auto italic font-bold leading-relaxed">
                 נמאס לך לדחוף קלוריות שנשרפות באוויר? הגיע הזמן לתוכנית שתהפוך כל גרם בגוף שלך לנוכחות שאי אפשר לפספס.
             </p>
             <div class="flex flex-col md:flex-row gap-4 justify-center items-center">
@@ -126,121 +123,121 @@
 
     <main id="main-content">
 
-        <!-- SECTION 2: REVIEWS SLIDER -->
+        <!-- REVIEWS -->
         <section id="reviews" class="py-48 bg-dark overflow-hidden text-right italic">
             <div class="container mx-auto px-6 relative">
-                <h2 class="text-4xl font-black italic mb-16 uppercase text-center italic">הוכחות מהשטח</h2>
+                <h2 class="text-4xl font-black italic mb-16 uppercase text-center">הוכחות מהשטח</h2>
                 
                 <button onclick="scrollReviews(-450)" class="absolute left-4 top-1/2 -translate-y-1/2 z-20 bg-zinc-800/80 p-4 rounded-full text-white hidden md:block hover:bg-primary transition shadow-xl"><i class="fa-solid fa-chevron-left"></i></button>
                 <button onclick="scrollReviews(450)" class="absolute right-4 top-1/2 -translate-y-1/2 z-20 bg-zinc-800/80 p-4 rounded-full text-white hidden md:block hover:bg-primary transition shadow-xl"><i class="fa-solid fa-chevron-right"></i></button>
 
-                <div id="review-slider" class="flex overflow-x-auto snap-x snap-mandatory gap-8 no-scrollbar pb-10 px-4 scroll-smooth italic">
+                <div id="review-slider" class="flex overflow-x-auto snap-x snap-mandatory gap-8 no-scrollbar pb-10 px-4 scroll-smooth">
                     <div class="snap-center shrink-0 w-[350px] md:w-[600px] bg-box p-8 rounded-3xl border border-zinc-800 shadow-xl flex flex-col gap-6">
-                        <div class="flex gap-4 h-64 md:h-96 rounded-2xl overflow-hidden border border-zinc-800 shrink-0 italic">
-                            <img src="images/1.jpg" class="w-1/2 h-full object-cover" alt="דיוויד לפני">
-                            <img src="images/822.png" class="w-1/2 h-full object-cover" alt="דיוויד אחרי">
+                        <div class="flex gap-4 h-64 md:h-96 rounded-2xl overflow-hidden border border-zinc-800 shrink-0">
+                            <img src="1.png" class="w-1/2 h-full object-cover" alt="דיוויד לפני">
+                            <img src="822.png" class="w-1/2 h-full object-cover" alt="דיוויד אחרי">
                         </div>
                         <h4 class="font-black text-primary italic uppercase text-xs">דיוויד ד.</h4>
                     </div>
                     <div class="snap-center shrink-0 w-[350px] md:w-[600px] bg-box p-8 rounded-3xl border border-zinc-800 shadow-xl flex flex-col gap-6">
-                        <div class="flex gap-4 h-64 md:h-96 rounded-2xl overflow-hidden border border-zinc-800 shrink-0 italic">
-                            <img src="images/2.png" class="w-1/2 h-full object-cover" alt="אור לפני">
-                            <img src="images/1557.png" class="w-1/2 h-full object-cover" alt="אור אחרי">
+                        <div class="flex gap-4 h-64 md:h-96 rounded-2xl overflow-hidden border border-zinc-800 shrink-0">
+                            <img src="2.png" class="w-1/2 h-full object-cover" alt="אור לפני">
+                            <img src="1557.png" class="w-1/2 h-full object-cover" alt="אור אחרי">
                         </div>
                         <h4 class="font-black text-primary italic uppercase text-xs">אור.ל</h4>
                     </div>
-                    <div class="snap-center shrink-0 w-[350px] md:w-[600px] bg-box p-8 rounded-3xl border border-zinc-800 shadow-xl flex flex-col gap-6 text-right italic">
-                        <div class="flex gap-4 h-64 md:h-96 rounded-2xl overflow-hidden border border-zinc-800 shrink-0 italic">
-                            <img src="images/Untitleddesign3555.jpg" class="w-1/2 h-full object-cover" alt="ליאור לפני">
-                            <img src="images/4.png" class="w-1/2 h-full object-cover" alt="אחרי">
+                    <div class="snap-center shrink-0 w-[350px] md:w-[600px] bg-box p-8 rounded-3xl border border-zinc-800 shadow-xl flex flex-col gap-6">
+                        <div class="flex gap-4 h-64 md:h-96 rounded-2xl overflow-hidden border border-zinc-800 shrink-0">
+                            <img src="Untitleddesign3555.jpg" class="w-1/2 h-full object-cover" alt="ליאור לפני">
+                            <img src="4.png" class="w-1/2 h-full object-cover" alt="אחרי">
                         </div>
                         <h4 class="font-black text-primary italic uppercase text-xs">ליאור מ.</h4>
                     </div>
-                    <div class="snap-center shrink-0 w-[350px] md:w-[600px] bg-box p-8 rounded-3xl border border-zinc-800 shadow-xl flex flex-col gap-6 text-right italic">
-                        <div class="flex gap-4 h-64 md:h-96 rounded-2xl overflow-hidden border border-zinc-800 shrink-0 italic">
-                            <img src="images/1615.jpg" class="w-1/2 h-full object-cover" alt="משה לפני">
-                            <img src="images/2484.jpg" class="w-1/2 h-full object-cover" alt="משה אחרי">
+                    <div class="snap-center shrink-0 w-[350px] md:w-[600px] bg-box p-8 rounded-3xl border border-zinc-800 shadow-xl flex flex-col gap-6">
+                        <div class="flex gap-4 h-64 md:h-96 rounded-2xl overflow-hidden border border-zinc-800 shrink-0">
+                            <img src="1615.jpg" class="w-1/2 h-full object-cover" alt="משה לפני">
+                            <img src="2484.jpg" class="w-1/2 h-full object-cover" alt="משה אחרי">
                         </div>
-                        <h4 class="font-black text-primary italic uppercase text-xs tracking-widest italic">משה א.</h4>
+                        <h4 class="font-black text-primary italic uppercase text-xs">משה א.</h4>
                     </div>
                 </div>
             </div>
         </section>
 
-        <!-- SECTION 3: THE 4 STEPS (Process) -->
+        <!-- PROCESS -->
         <section id="how-it-works" class="py-48 border-y border-zinc-900 bg-box italic">
             <div class="container mx-auto px-6 text-right italic">
-                <h2 class="text-5xl font-black italic text-center mb-24 uppercase italic italic">התהליך ב-4 שלבים</h2>
-                <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-12 italic">
-                    <div class="bg-dark p-10 rounded-3xl border border-zinc-800 reveal italic">
-                        <span class="text-5xl font-black text-primary opacity-20 block mb-6 italic italic">01</span>
+                <h2 class="text-5xl font-black italic text-center mb-24 uppercase">התהליך ב-4 שלבים</h2>
+                <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-12">
+                    <div class="bg-dark p-10 rounded-3xl border border-zinc-800 reveal">
+                        <span class="text-5xl font-black text-primary opacity-20 block mb-6">01</span>
                         <h4 class="text-2xl font-black text-white mb-6 uppercase italic">אבחון מדויק</h4>
-                        <p class="text-zinc-500 text-sm italic font-bold leading-relaxed italic">כדי לבנות בניין חזק, חייבים יסודות יציבים. הצעד הראשון שלנו הוא מילוי שאלון אבחון מעמיק ששלחתי לך. אני לא מסתפק רק ב"גובה ומשקל" – אני נכנס לעומק: הרגלי האכילה הנוכחיים, היסטוריית פציעות, סדר היום שלך, רמת הסטרס ואיכות השינה כדי להבין איך להוציא מהגוף שלך את המקסימום.</p>
+                        <p class="text-zinc-500 text-sm italic font-bold leading-relaxed">כדי לבנות בניין חזק, חייבים יסודות יציבים. הצעד הראשון שלנו הוא מילוי שאלון אבחון מעמיק ששלחתי לך. אני לא מסתפק רק ב"גובה ומשקל" – אני נכנס לעומק: הרגלי האכילה הנוכחיים, היסטוריית פציעות, סדר היום שלך, רמת הסטרס ואיכות השינה כדי להבין איך להוציא מהגוף שלך את המקסימום.</p>
                     </div>
-                    <div class="bg-dark p-10 rounded-3xl border border-zinc-800 reveal italic" style="transition-delay: 0.1s">
-                        <span class="text-5xl font-black text-primary opacity-20 block mb-6 italic italic">02</span>
+                    <div class="bg-dark p-10 rounded-3xl border border-zinc-800 reveal" style="transition-delay: 0.1s">
+                        <span class="text-5xl font-black text-primary opacity-20 block mb-6">02</span>
                         <h4 class="text-2xl font-black text-white mb-6 uppercase italic">בניית מסלול</h4>
-                        <p class="text-zinc-500 text-sm italic font-bold leading-relaxed italic">אחרי שניתחתי את הנתונים, אני בונה לך את הדרך. תכנית פעולה שלמה שמתאימה לאורח החיים שלך. אני מתאים את התהליך אליך – אם אתה סטודנט, עובד בעבודה פיזית או נמצא רוב היום במשרד – הכל מחושב כדי שתוכל להתמיד לאורך זמן בלי להרגיש שאתה ב"מלחמה" עם התהליך.</p>
+                        <p class="text-zinc-500 text-sm italic font-bold leading-relaxed">אחרי שניתחתי את הנתונים, אני בונה לך את הדרך. תכנית פעולה שלמה שמתאימה לאורח החיים שלך. אני מתאים את התהליך אליך – אם אתה סטודנט, עובד בעבודה פיזית או נמצא רוב היום במשרד – הכל מחושב כדי שתוכל להתמיד לאורך זמן בלי להרגיש שאתה ב"מלחמה" עם התהליך.</p>
                     </div>
-                    <div class="bg-dark p-10 rounded-3xl border border-zinc-800 reveal italic" style="transition-delay: 0.2s">
-                        <span class="text-5xl font-black text-primary opacity-20 block mb-6 italic italic">03</span>
-                        <h4 class="text-2xl font-black text-white mb-4 uppercase italic italic">ליווי מקצועי</h4>
-                        <p class="text-zinc-500 text-sm italic font-bold leading-relaxed italic">זה ההבדל בין להצליח לבין לוותר. אני איתך לאורך כל הדרך, צמוד בוואטסאפ לכל שאלה, דגש טכני או התייעצות. אנחנו מבצעים מעקב שבועי קפדני אחר המדדים והביצועים שלך, ומבצעים שינויים בזמן אמת במידה וצריך.</p>
+                    <div class="bg-dark p-10 rounded-3xl border border-zinc-800 reveal" style="transition-delay: 0.2s">
+                        <span class="text-5xl font-black text-primary opacity-20 block mb-6">03</span>
+                        <h4 class="text-2xl font-black text-white mb-4 uppercase italic">ליווי מקצועי</h4>
+                        <p class="text-zinc-500 text-sm italic font-bold leading-relaxed">זה ההבדל בין להצליח לבין לוותר. אני איתך לאורך כל הדרך, צמוד בוואטסאפ לכל שאלה, דגש טכני או התייעצות. אנחנו מבצעים מעקב שבועי קפדני אחר המדדים והביצועים שלך, ומבצעים שינויים בזמן אמת במידה וצריך.</p>
                     </div>
-                    <div class="bg-dark p-10 rounded-3xl border border-zinc-800 reveal italic" style="transition-delay: 0.3s">
-                        <span class="text-5xl font-black text-primary opacity-20 block mb-6 italic italic">04</span>
-                        <h4 class="text-2xl font-black text-white mb-4 uppercase italic italic">המהפך</h4>
-                        <p class="text-zinc-500 text-sm italic font-bold leading-relaxed italic">התהליך הזה נגמר כשאתה כבר לא "הבחור הרזה" בחדר. אתה מקבל גוף רחב וחזק, אבל בעיקר את הידיעה שזהו – הבנת איך זה עובד. פיצחת את הקוד של הגוף שלך ומהיום השליטה היא לגמרי בידיים שלך, לתמיד.</p>
+                    <div class="bg-dark p-10 rounded-3xl border border-zinc-800 reveal" style="transition-delay: 0.3s">
+                        <span class="text-5xl font-black text-primary opacity-20 block mb-6">04</span>
+                        <h4 class="text-2xl font-black text-white mb-4 uppercase italic">המהפך</h4>
+                        <p class="text-zinc-500 text-sm italic font-bold leading-relaxed">התהליך הזה נגמר כשאתה כבר לא "הבחור הרזה" בחדר. אתה מקבל גוף רחב וחזק, אבל בעיקר את הידיעה שזהו – הבנת איך זה עובד. פיצחת את הקוד של הגוף שלך ומהיום השליטה היא לגמרי בידיים שלך, לתמיד.</p>
                     </div>
                 </div>
             </div>
         </section>
 
-        <!-- SECTION 4: THE STORY (Authority) -->
+        <!-- ABOUT -->
         <section id="about" class="py-48 bg-dark italic">
-            <div class="container mx-auto px-6 reveal italic">
-                <div class="flex flex-col lg:flex-row items-center gap-16 max-w-6xl mx-auto mb-32 italic">
-                    <div class="w-full lg:w-1/3 flex justify-center italic italic">
-                        <div class="relative w-72 h-72 md:w-96 md:h-96 rounded-full border-4 border-primary overflow-hidden shadow-2xl italic">
-                            <img src="images/Untitleddesign2150.png" class="w-full h-full object-cover" alt="דן הלל">
+            <div class="container mx-auto px-6 reveal">
+                <div class="flex flex-col lg:flex-row items-center gap-16 max-w-6xl mx-auto mb-32">
+                    <div class="w-full lg:w-1/3 flex justify-center">
+                        <div class="relative w-72 h-72 md:w-96 md:h-96 rounded-full border-4 border-primary overflow-hidden shadow-2xl">
+                            <img src="untitleddesign2150.png" class="w-full h-full object-cover" alt="דן הילל">
                         </div>
                     </div>
-                    <div class="w-full lg:w-2/3 italic">
+                    <div class="w-full lg:w-2/3">
                         <h2 class="text-primary font-black uppercase mb-4 tracking-widest italic text-xs font-bold">מי אני?</h2>
-                        <h3 class="text-4xl md:text-6xl font-black mb-8 italic uppercase text-right italic">נעים מאוד, אני דן הלל.</h3>
-                        <p class="text-zinc-300 text-xl leading-relaxed mb-6 italic font-bold italic text-right">אני מאמן כושר שמתמחה בבניית שריר ושינוי הרכב גוף. המטרה שלי פשוטה: לקחת בחורים רזים ולבנות להם גוף חזק, רחב ושרירי בצורה הכי יעילה שיש. אני מאמין בעבודה לפי מספרים ועקרונות ברורים, לא לפי 'תחושות'. התהליך אצלי מבוסס על אבחון מדויק, תוכנית אימונים עם עומס שעולה בהדרגה, ותזונה שמתאימה לסדר היום שלך. אני כאן כדי לחסוך לך את הניסוי והטעייה ולהביא אותך לתוצאה שנשארת איתך לתמיד.</p>
+                        <h3 class="text-4xl md:text-6xl font-black mb-8 italic uppercase text-right">נעים מאוד, אני דן הלל.</h3>
+                        <p class="text-zinc-300 text-xl leading-relaxed mb-6 italic font-bold text-right">אני מאמן כושר שמתמחה בבניית שריר ושינוי הרכב גוף. המטרה שלי פשוטה: לקחת בחורים רזים ולבנות להם גוף חזק, רחב ושרירי בצורה הכי יעילה שיש. אני מאמין בעבודה לפי מספרים ועקרונות ברורים, לא לפי 'תחושות'. התהליך אצלי מבוסס על אבחון מדויק, תוכנית אימונים עם עומס שעולה בהדרגה, ותזונה שמתאימה לסדר היום שלך. אני כאן כדי לחסוך לך את הניסוי והטעייה ולהביא אותך לתוצאה שנשארת איתך לתמיד.</p>
                     </div>
                 </div>
-                <div class="flex flex-col lg:flex-row-reverse items-center gap-24 max-w-6xl mx-auto text-right italic italic italic">
+                <div class="flex flex-col lg:flex-row-reverse items-center gap-24 max-w-6xl mx-auto text-right">
                     <div class="w-full lg:w-1/2 flex flex-col md:flex-row h-auto md:h-[550px] rounded-3xl overflow-hidden shadow-2xl border-4 border-zinc-800 relative bg-zinc-900">
                         <div class="w-full md:w-1/2 h-[400px] md:h-full relative overflow-hidden border-b md:border-b-0 md:border-l border-zinc-800 flex items-center justify-center">
-                            <img src="images/D83C8489-2D31-4094-95BA-584FC68CC8A3_L0_001-146202415_01_48218.jpg" class="w-full h-full object-cover scale-[1.25] object-right" alt="לפני">
-                            <span class="absolute bottom-4 right-4 bg-black/60 px-4 py-1 rounded-full text-[10px] font-black uppercase italic italic z-10 text-white italic">לפני</span>
+                            <img src="D83C8489-2D31-4094-95BA-584FC68CC8A3_L0_001-146202415_01_48218.jpg" class="w-full h-full object-cover scale-[1.25] object-right" alt="לפני">
+                            <span class="absolute bottom-4 right-4 bg-black/60 px-4 py-1 rounded-full text-[10px] font-black uppercase italic z-10 text-white">לפני</span>
                         </div>
                         <div class="w-full md:w-1/2 h-[400px] md:h-full relative overflow-hidden flex items-center justify-center">
-                            <img src="images/Untitleddesign2.jpg" class="w-full h-full object-cover scale-[1.05] origin-center" alt="אחרי">
-                            <span class="absolute bottom-4 right-4 bg-primary px-4 py-1 rounded-full text-[10px] font-black uppercase italic italic z-10 text-white italic">אחרי</span>
+                            <img src="untitleddesign2.jpg" class="w-full h-full object-cover scale-[1.05] origin-center" alt="אחרי">
+                            <span class="absolute bottom-4 right-4 bg-primary px-4 py-1 rounded-full text-[10px] font-black uppercase italic z-10 text-white">אחרי</span>
                         </div>
                     </div>
-                    <div class="w-full lg:w-1/2 italic">
-                        <h2 class="text-primary font-black uppercase mb-4 tracking-widest italic text-xs font-bold italic italic">השינוי שלי</h2>
-                        <h3 class="text-4xl md:text-5xl font-black mb-8 italic uppercase leading-tight text-right italic italic">שינוי של 25 קילו.</h3>
+                    <div class="w-full lg:w-1/2">
+                        <h2 class="text-primary font-black uppercase mb-4 tracking-widest italic text-xs font-bold">השינוי שלי</h2>
+                        <h3 class="text-4xl md:text-5xl font-black mb-8 italic uppercase leading-tight text-right">שינוי של 25 קילו.</h3>
                         <p class="text-zinc-400 text-lg leading-relaxed mb-8 italic font-bold text-right">
                             גם אני הייתי שם. הבחור שמתאמן חזק, אוכל עד שאי אפשר יותר, ועדיין מרגיש שהחולצה "תלויה" עליו. תמיד הרגשתי הילד ה"קטן" בחבורה, הרגשתי בלתי נראה. הרגשתי שאני חייב לעשות משהו עם זה... ואז השינוי שלי התחיל כשהבנתי למה מה שאני עושה לא עובד.
                         </p>
                         <div class="bg-primary/10 border-r-4 border-primary p-8 rounded-2xl shadow-xl text-right">
-                            <p class="text-white text-xl md:text-2xl font-black italic leading-snug italic italic">"עכשיו המטרה שלי היא לעזור לגברים אחרים לצאת מההרגשה הזאת ולהראות להם שהמצב כמו שהוא עכשיו יכול להשתנות מהר מאוד אם באמת רוצים ומשקיעים."</p>
+                            <p class="text-white text-xl md:text-2xl font-black italic leading-snug">"עכשיו המטרה שלי היא לעזור לגברים אחרים לצאת מההרגשה הזאת ולהראות להם שהמצב כמו שהוא עכשיו יכול להשתנות מהר מאוד אם באמת רוצים ומשקיעים."</p>
                         </div>
                     </div>
                 </div>
             </div>
         </section>
 
-        <!-- SIMPLIFIED WHY ME SECTION -->
+        <!-- WHY ME -->
         <section class="py-24 bg-dark italic">
             <div class="container mx-auto px-6 max-w-4xl">
                 <div class="bg-primary/5 border border-primary/20 p-12 rounded-[3rem] text-right reveal">
-                    <h3 class="text-3xl md:text-4xl font-black mb-6 uppercase italic italic text-primary">אז למה דווקא אני יכול לעזור לך?</h3>
+                    <h3 class="text-3xl md:text-4xl font-black mb-6 uppercase italic text-primary">אז למה דווקא אני יכול לעזור לך?</h3>
                     <p class="text-white text-xl md:text-2xl font-bold italic leading-relaxed">
                         התשובה פשוטה: כי אני הייתי שם. אני מכיר מקרוב כל מכשול שתוקע אותך – מהתסכול של לאכול המון ולא לראות שינוי, ועד לתחושה שהגוף שלך פשוט "מסרב" לגדול. אני לא רק מלמד תיאוריה, אני מביא איתי את הדרך שאני עברתי בעצמי, את הטעויות שכבר עשיתי בשבילך.
                     </p>
@@ -248,67 +245,67 @@
             </div>
         </section>
 
-        <!-- MOTIVATION SECTION -->
+        <!-- MOTIVATION -->
         <section class="py-24 bg-dark overflow-hidden italic">
             <div class="container mx-auto px-6 text-center">
-                <div class="reveal italic">
-                    <h2 class="text-4xl md:text-7xl font-black italic mb-6 uppercase tracking-tighter italic">תעצום עיניים. דמיין את עצמך <br> <span class="text-primary italic">בעוד 3 חודשים מהיום.</span></h2>
+                <div class="reveal">
+                    <h2 class="text-4xl md:text-7xl font-black italic mb-6 uppercase tracking-tighter">תעצום עיניים. דמיין את עצמך <br> <span class="text-primary italic">בעוד 3 חודשים מהיום.</span></h2>
                     <p class="text-xl md:text-2xl text-zinc-400 max-w-4xl mx-auto font-bold mb-10 italic">איך זה מרגיש להסתכל במראה ולראות גוף רחב? איך זה מרגיש כשהחולצה יושבת עליך בול? איך זה מרגיש להיכנס לחדר עם ביטחון עצמי שאי אפשר להסביר? <br> <span class="text-white mt-4 block italic uppercase">ההרגשה הזו נמצאת במרחק החלטה אחת.</span></p>
                 </div>
             </div>
         </section>
 
-        <!-- FAQ SECTION -->
-        <section id="faq" class="py-48 bg-box italic italic">
-            <div class="container mx-auto px-6 max-w-4xl italic">
-                <div class="text-center mb-24 reveal italic">
+        <!-- FAQ -->
+        <section id="faq" class="py-48 bg-box italic">
+            <div class="container mx-auto px-6 max-w-4xl">
+                <div class="text-center mb-24 reveal">
                     <h2 class="text-4xl md:text-6xl font-black italic mb-6 uppercase">שאלות ותשובות</h2>
-                    <p class="text-zinc-500 font-bold italic text-lg italic">כל מה שרצית לדעת על התהליך והליווי</p>
+                    <p class="text-zinc-500 font-bold italic text-lg">כל מה שרצית לדעת על התהליך והליווי</p>
                 </div>
                 
-                <div class="space-y-4 reveal italic">
-                    <details class="group bg-dark border border-zinc-800 rounded-2xl overflow-hidden transition-all duration-300">
+                <div class="space-y-4 reveal">
+                    <details class="group bg-dark border border-zinc-800 rounded-2xl overflow-hidden">
                         <summary class="flex justify-between items-center p-6 cursor-pointer list-none italic">
                             <span class="text-xl font-bold italic text-white">למי הליווי מתאים?</span>
                             <i class="fa-solid fa-chevron-down text-primary transition-transform duration-300"></i>
                         </summary>
-                        <div class="p-6 pt-0 text-zinc-400 font-bold italic leading-relaxed border-t border-zinc-800/50 mt-4 italic">
+                        <div class="p-6 pt-0 text-zinc-400 font-bold italic leading-relaxed border-t border-zinc-800/50 mt-4">
                             הליווי מתאים לגברים רזים שמתקשים לעלות במשקל, מתחילים שרוצים לבנות בסיס נכון או מתאמנים תקועים שרוצים לשבור את תקרת הזכוכית שלהם.
                         </div>
                     </details>
-                    <details class="group bg-dark border border-zinc-800 rounded-2xl overflow-hidden transition-all duration-300">
+                    <details class="group bg-dark border border-zinc-800 rounded-2xl overflow-hidden">
                         <summary class="flex justify-between items-center p-6 cursor-pointer list-none italic">
                             <span class="text-xl font-bold italic text-white">כמה זמן הליווי נמשך?</span>
                             <i class="fa-solid fa-chevron-down text-primary transition-transform duration-300"></i>
                         </summary>
-                        <div class="p-6 pt-0 text-zinc-400 font-bold italic leading-relaxed border-t border-zinc-800/50 mt-4 italic">
+                        <div class="p-6 pt-0 text-zinc-400 font-bold italic leading-relaxed border-t border-zinc-800/50 mt-4">
                             תהליך שינוי אמיתי לוקח זמן. הליווי מבוסס על סבבים של 3 חודשים לפחות, כדי שנוכל לבצע מעקבים ולראות גדילה משמעותית בשריר ולא רק "נוזלים".
                         </div>
                     </details>
-                    <details class="group bg-dark border border-zinc-800 rounded-2xl overflow-hidden transition-all duration-300">
+                    <details class="group bg-dark border border-zinc-800 rounded-2xl overflow-hidden">
                         <summary class="flex justify-between items-center p-6 cursor-pointer list-none italic">
                             <span class="text-xl font-bold italic text-white">האם אני חייב לאכול כמויות מטורפות?</span>
                             <i class="fa-solid fa-chevron-down text-primary transition-transform duration-300"></i>
                         </summary>
-                        <div class="p-6 pt-0 text-zinc-400 font-bold italic leading-relaxed border-t border-zinc-800/50 mt-4 italic">
+                        <div class="p-6 pt-0 text-zinc-400 font-bold italic leading-relaxed border-t border-zinc-800/50 mt-4">
                             ממש לא. אפשר לאכול מאכלים עם צפיפות קלורית גבוהה, להכניס את הקלוריות הנכונות בלי להרגיש "חנוקים" ובלי להכריח את עצמך לאכול כשאתה שבע.
                         </div>
                     </details>
-                    <details class="group bg-dark border border-zinc-800 rounded-2xl overflow-hidden transition-all duration-300">
+                    <details class="group bg-dark border border-zinc-800 rounded-2xl overflow-hidden">
                         <summary class="flex justify-between items-center p-6 cursor-pointer list-none italic">
                             <span class="text-xl font-bold italic text-white">תוך כמה זמן אראה תוצאות?</span>
                             <i class="fa-solid fa-chevron-down text-primary transition-transform duration-300"></i>
                         </summary>
-                        <div class="p-6 pt-0 text-zinc-400 font-bold italic leading-relaxed border-t border-zinc-800/50 mt-4 italic">
+                        <div class="p-6 pt-0 text-zinc-400 font-bold italic leading-relaxed border-t border-zinc-800/50 mt-4">
                             כבר בשבועיים הראשונים תרגיש שינוי ברמות האנרגיה ובכוח באימונים. שינוי ויזואלי במראה הגוף והחולצה מתחיל להיות מורגש בדרך כלל לאחר 4-6 שבועות.
                         </div>
                     </details>
-                    <details class="group bg-dark border border-zinc-800 rounded-2xl overflow-hidden transition-all duration-300">
+                    <details class="group bg-dark border border-zinc-800 rounded-2xl overflow-hidden">
                         <summary class="flex justify-between items-center p-6 cursor-pointer list-none italic">
                             <span class="text-xl font-bold italic text-white">מה קורה אם אני לא מצליח להתמיד?</span>
                             <i class="fa-solid fa-chevron-down text-primary transition-transform duration-300"></i>
                         </summary>
-                        <div class="p-6 pt-0 text-zinc-400 font-bold italic leading-relaxed border-t border-zinc-800/50 mt-4 italic">
+                        <div class="p-6 pt-0 text-zinc-400 font-bold italic leading-relaxed border-t border-zinc-800/50 mt-4">
                             בדיוק בשביל זה יש ליווי אישי. אני כאן כדי לדייק את התוכנית ללו"ז שלך, לעזור לך ברגעי משבר ולוודא שאתה לא מוותר הפעם עד שמגיעים ליעד.
                         </div>
                     </details>
@@ -316,24 +313,23 @@
             </div>
         </section>
 
-        <!-- THE QUIZ -->
+        <!-- QUIZ -->
         <section id="quiz" class="py-48 bg-dark text-right italic">
             <div class="container mx-auto px-6 max-w-3xl text-right">
-                <div class="bg-box p-12 rounded-[3.5rem] border border-zinc-800 shadow-2xl text-center italic italic">
-                    <h2 class="text-4xl font-black italic mb-2 uppercase italic italic">בדיקת התאמה לשיטה</h2>
-                    <p class="text-zinc-600 mb-8 text-xs font-bold uppercase tracking-widest italic italic">סריקת נתונים אישית (5 שלבים)</p>
-                    <div class="w-full bg-zinc-800 h-1.5 rounded-full mb-12 overflow-hidden italic italic"><div id="quiz-progress-bar" class="bg-primary h-full transition-all duration-500" style="width: 20%"></div></div>
-                    <div id="quiz-internal-flow" class="text-right italic italic">
-                        <div class="quiz-step active" id="qst-1"><h4 class="text-xl font-bold mb-8 italic text-zinc-300">1. האם אתה מגדיר את עצמך כ"רזה מטבעך"?</h4><div class="grid gap-4 italic italic"><button onclick="captureAns('met','fast'); goToNextQuiz(2, 40)" class="w-full text-right bg-zinc-900 py-6 px-8 rounded-xl border border-zinc-700 hover:border-primary transition font-bold italic">כן, אני אוכל הרבה ולא גדל</button><button onclick="captureAns('met','incon'); goToNextQuiz(2, 40)" class="w-full text-right bg-zinc-900 py-6 px-8 rounded-xl border border-zinc-700 hover:border-primary transition font-bold italic italic">אני רזה אבל לא עקבי בארוחות</button></div></div>
-                        <div class="quiz-step" id="qst-2"><h4 class="text-xl font-bold mb-8 italic text-zinc-300 italic italic">2. כמה זמן אתה מתאמן כיום בחדר הכושר?</h4><div class="grid gap-4 italic italic"><button onclick="captureAns('exp','beg'); goToNextQuiz(3, 60)" class="w-full text-right bg-zinc-900 py-6 px-8 rounded-xl border border-zinc-700 hover:border-primary transition font-bold italic italic">אני מתחיל (פחות מחצי שנה)</button><button onclick="captureAns('exp','stuck'); goToNextQuiz(3, 60)" class="w-full text-right bg-zinc-900 py-6 px-8 rounded-xl border border-zinc-700 hover:border-primary transition font-bold italic italic">מתאמן שנים ותקוע באותו משקל</button></div></div>
-                        <div class="quiz-step" id="qst-3"><h4 class="text-xl font-bold mb-8 italic text-zinc-300 italic italic">3. מהי המטרה הפיזית הכי חשובה לך להשיג?</h4><div class="grid gap-4 italic italic"><button onclick="captureAns('goal','frame'); goToNextQuiz(4, 80)" class="w-full text-right bg-zinc-900 py-6 px-8 rounded-xl border border-zinc-700 hover:border-primary transition font-bold text-right italic italic">להרחיב את הכתפיים והגב</button><button onclick="captureAns('goal','mass'); goToNextQuiz(4, 80)" class="w-full text-right bg-zinc-900 py-6 px-8 rounded-xl border border-zinc-700 hover:border-primary transition font-bold text-right italic italic">להוסיף מסת שריר משמעותית</button></div></div>
-                        <div class="quiz-step" id="qst-4"><h4 class="text-xl font-bold mb-8 italic text-zinc-300 italic italic italic">4. מה המכשול הכי גדול שלך כרגע?</h4><div class="grid gap-4 italic italic italic"><button onclick="captureAns('obs','app'); goToNextQuiz(5, 95)" class="w-full text-right bg-zinc-900 py-6 px-8 rounded-xl border border-zinc-700 hover:border-primary transition font-bold italic italic">חוסר תיאבון / קושי לאכול הרבה</button><button onclick="captureAns('obs','knw'); goToNextQuiz(5, 95)" class="w-full text-right bg-zinc-900 py-6 px-8 rounded-xl border border-zinc-700 hover:border-primary transition font-bold italic italic">חוסר ידע בבניית תוכנית</button></div></div>
-                        <div class="quiz-step" id="qst-5"><h4 class="text-xl font-bold mb-8 italic text-zinc-300 italic italic italic italic">5. האם אתה מוכן להתחייב לשינוי?</h4><div class="grid gap-4 italic italic italic italic"><button onclick="captureAns('com','yes'); goToNextQuiz(6, 100)" class="w-full text-right bg-zinc-900 py-6 px-8 rounded-xl border border-zinc-700 hover:border-primary transition font-bold text-center italic italic">אני מוכן לתת הכל ולגדול סוף סוף!</button></div></div>
+                <div class="bg-box p-12 rounded-[3.5rem] border border-zinc-800 shadow-2xl text-center italic">
+                    <h2 class="text-4xl font-black italic mb-2 uppercase">בדיקת התאמה לשיטה</h2>
+                    <p class="text-zinc-600 mb-8 text-xs font-bold uppercase tracking-widest italic">סריקת נתונים אישית (5 שלבים)</p>
+                    <div class="w-full bg-zinc-800 h-1.5 rounded-full mb-12 overflow-hidden"><div id="quiz-progress-bar" class="bg-primary h-full transition-all duration-500" style="width: 20%"></div></div>
+                    <div id="quiz-internal-flow" class="text-right italic">
+                        <div class="quiz-step active" id="qst-1"><h4 class="text-xl font-bold mb-8 italic text-zinc-300">1. האם אתה מגדיר את עצמך כ"רזה מטבעך"?</h4><div class="grid gap-4"><button onclick="captureAns('met','fast'); goToNextQuiz(2, 40)" class="w-full text-right bg-zinc-900 py-6 px-8 rounded-xl border border-zinc-700 hover:border-primary transition font-bold italic">כן, אני אוכל הרבה ולא גדל</button><button onclick="captureAns('met','incon'); goToNextQuiz(2, 40)" class="w-full text-right bg-zinc-900 py-6 px-8 rounded-xl border border-zinc-700 hover:border-primary transition font-bold italic">אני רזה אבל לא עקבי בארוחות</button></div></div>
+                        <div class="quiz-step" id="qst-2"><h4 class="text-xl font-bold mb-8 italic text-zinc-300">2. כמה זמן אתה מתאמן כיום בחדר הכושר?</h4><div class="grid gap-4"><button onclick="captureAns('exp','beg'); goToNextQuiz(3, 60)" class="w-full text-right bg-zinc-900 py-6 px-8 rounded-xl border border-zinc-700 hover:border-primary transition font-bold italic">אני מתחיל (פחות מחצי שנה)</button><button onclick="captureAns('exp','stuck'); goToNextQuiz(3, 60)" class="w-full text-right bg-zinc-900 py-6 px-8 rounded-xl border border-zinc-700 hover:border-primary transition font-bold italic">מתאמן שנים ותקוע באותו משקל</button></div></div>
+                        <div class="quiz-step" id="qst-3"><h4 class="text-xl font-bold mb-8 italic text-zinc-300">3. מהי המטרה הפיזית הכי חשובה לך להשיג?</h4><div class="grid gap-4"><button onclick="captureAns('goal','frame'); goToNextQuiz(4, 80)" class="w-full text-right bg-zinc-900 py-6 px-8 rounded-xl border border-zinc-700 hover:border-primary transition font-bold italic">להרחיב את הכתפיים והגב</button><button onclick="captureAns('goal','mass'); goToNextQuiz(4, 80)" class="w-full text-right bg-zinc-900 py-6 px-8 rounded-xl border border-zinc-700 hover:border-primary transition font-bold italic">להוסיף מסת שריר משמעותית</button></div></div>
+                        <div class="quiz-step" id="qst-4"><h4 class="text-xl font-bold mb-8 italic text-zinc-300">4. מה המכשול הכי גדול שלך כרגע?</h4><div class="grid gap-4"><button onclick="captureAns('obs','app'); goToNextQuiz(5, 95)" class="w-full text-right bg-zinc-900 py-6 px-8 rounded-xl border border-zinc-700 hover:border-primary transition font-bold italic">חוסר תיאבון / קושי לאכול הרבה</button><button onclick="captureAns('obs','knw'); goToNextQuiz(5, 95)" class="w-full text-right bg-zinc-900 py-6 px-8 rounded-xl border border-zinc-700 hover:border-primary transition font-bold italic">חוסר ידע בבניית תוכנית</button></div></div>
+                        <div class="quiz-step" id="qst-5"><h4 class="text-xl font-bold mb-8 italic text-zinc-300">5. האם אתה מוכן להתחייב לשינוי?</h4><div class="grid gap-4"><button onclick="captureAns('com','yes'); goToNextQuiz(6, 100)" class="w-full text-right bg-zinc-900 py-6 px-8 rounded-xl border border-zinc-700 hover:border-primary transition font-bold text-center italic">אני מוכן לתת הכל ולגדול סוף סוף!</button></div></div>
                         <div class="quiz-step text-center italic" id="qst-6">
-                            <i class="fa-solid fa-circle-check text-emerald-500 text-6xl mb-8 italic"></i><h4 class="text-3xl font-black mb-4 uppercase italic italic italic">נמצאה התאמה גבוהה!</h4>
-                            
-                            <!-- UPDATED FORM FOR NETLIFY AS REQUESTED -->
-                            <form name="contact" method="POST" netlify onsubmit="handleFinalSubmit()" class="space-y-4 max-w-sm mx-auto text-right italic">
+                            <i class="fa-solid fa-circle-check text-emerald-500 text-6xl mb-8"></i>
+                            <h4 class="text-3xl font-black mb-4 uppercase italic">נמצאה התאמה גבוהה!</h4>
+                            <form name="contact" method="POST" netlify onsubmit="handleFinalSubmit(event)" class="space-y-4 max-w-sm mx-auto text-right italic">
                                 <input type="hidden" name="form-name" value="contact">
                                 <input type="hidden" name="מטבוליזם" id="ans-met">
                                 <input type="hidden" name="ניסיון" id="ans-exp">
@@ -342,54 +338,52 @@
                                 <input type="hidden" name="מחויבות" id="ans-com">
                                 <input type="text" name="שם" placeholder="שם מלא" required class="w-full bg-zinc-800 border border-zinc-700 rounded-lg py-5 px-8 outline-none focus:border-primary transition text-white italic">
                                 <input type="tel" name="טלפון" placeholder="טלפון" required class="w-full bg-zinc-800 border border-zinc-700 rounded-lg py-5 px-8 outline-none focus:border-primary transition text-white italic">
-                                <button type="submit" id="submitBtn" class="w-full bg-primary text-white font-black py-6 rounded-lg text-2xl hover:scale-105 transition italic uppercase shadow-xl italic">שלח מועמדות לשיחה</button>
+                                <button type="submit" id="submitBtn" class="w-full bg-primary text-white font-black py-6 rounded-lg text-2xl hover:scale-105 transition italic uppercase shadow-xl">שלח מועמדות לשיחה</button>
                             </form>
                         </div>
                     </div>
                 </div>
-                <div id="successMsg" class="hidden py-40 text-center reveal italic"><i class="fa-solid fa-circle-check text-emerald-500 text-8xl mb-8 italic"></i><h3 class="text-5xl font-black uppercase italic mb-6 text-white italic">הפרטים נשלחו בהצלחה!</h3><p class="text-zinc-400 text-xl font-bold italic italic">דן יעבור על המועמדות ויחזור אליך ב-24 השעות הקרובות.</p></div>
+                <div id="successMsg" class="hidden py-40 text-center reveal"><i class="fa-solid fa-circle-check text-emerald-500 text-8xl mb-8"></i><h3 class="text-5xl font-black uppercase italic mb-6 text-white">הפרטים נשלחו בהצלחה!</h3><p class="text-zinc-400 text-xl font-bold italic">דן יעבור על המועמדות ויחזור אליך ב-24 השעות הקרובות.</p></div>
             </div>
         </section>
 
     </main>
 
-    <iframe name="hidden_iframe" id="hidden_iframe" style="display:none;"></iframe>
-
-    <footer class="py-24 bg-dark border-t border-zinc-900 text-center text-right italic">
+    <footer class="py-24 bg-dark border-t border-zinc-900 text-center italic">
         <div class="flex flex-wrap justify-center gap-12 mb-16 opacity-40">
-            <button onclick="openModal('accessModal')" class="text-[10px] font-black uppercase underline tracking-widest italic italic">נגישות</button>
-            <button onclick="openModal('termsModal')" class="text-[10px] font-black uppercase underline tracking-widest italic italic italic">תנאים ובריאות</button>
-            <button onclick="openModal('privacyModal')" class="text-[10px] font-black uppercase underline tracking-widest italic italic italic italic">פרטיות</button>
+            <button onclick="openModal('accessModal')" class="text-[10px] font-black uppercase underline tracking-widest italic">נגישות</button>
+            <button onclick="openModal('termsModal')" class="text-[10px] font-black uppercase underline tracking-widest italic">תנאים ובריאות</button>
+            <button onclick="openModal('privacyModal')" class="text-[10px] font-black uppercase underline tracking-widest italic">פרטיות</button>
         </div>
-        <p class="text-[10px] text-zinc-800 font-black uppercase tracking-[0.4em] italic italic">&copy; 2026 DEN HILLEL | ONLINE FITNESS COACHING
+        <p class="text-[10px] text-zinc-800 font-black uppercase tracking-[0.4em] italic">&copy; 2026 DEN HILLEL | ONLINE FITNESS COACHING</p>
     </footer>
 
-    <!-- DETAILED MODALS -->
+    <!-- MODALS -->
     <div id="accessModal" class="fixed inset-0 bg-black/98 z-[200000] hidden items-center justify-center p-4 text-right italic">
-        <div class="bg-zinc-900 border border-zinc-800 p-10 rounded-2xl max-w-4xl w-full text-right relative overflow-y-auto max-h-[90vh] italic">
-            <button onclick="closeModal('accessModal')" class="absolute top-6 left-6 text-white text-4xl hover:text-primary transition italic">&times;</button>
-            <h2 class="text-3xl font-black text-primary italic mb-8 uppercase underline italic italic">הצהרת נגישות</h2>
-            <div class="text-zinc-300 text-sm leading-relaxed space-y-4 italic italic">
+        <div class="bg-zinc-900 border border-zinc-800 p-10 rounded-2xl max-w-4xl w-full text-right relative overflow-y-auto max-h-[90vh]">
+            <button onclick="closeModal('accessModal')" class="absolute top-6 left-6 text-white text-4xl hover:text-primary transition">&times;</button>
+            <h2 class="text-3xl font-black text-primary italic mb-8 uppercase underline">הצהרת נגישות</h2>
+            <div class="text-zinc-300 text-sm leading-relaxed space-y-4 italic">
                 <p>האתר הונגש בהתאם לתקנות שוויון זכויות לאנשים עם מוגבלות.</p>
             </div>
         </div>
     </div>
 
-    <div id="termsModal" class="fixed inset-0 bg-black/98 z-[200000] hidden items-center justify-center p-4 text-right italic italic">
-        <div class="bg-zinc-900 border border-zinc-800 p-10 rounded-2xl max-w-4xl w-full text-right relative overflow-y-auto max-h-[90vh] italic italic">
-            <button onclick="closeModal('termsModal')" class="absolute top-6 left-6 text-white text-4xl hover:text-primary transition italic italic">&times;</button>
-            <h2 class="text-3xl font-black text-primary italic mb-8 uppercase underline italic italic italic">תנאים ובריאות</h2>
-            <div class="text-zinc-300 text-sm leading-relaxed space-y-6 italic italic italic italic italic text-right italic">
-                <p class="font-bold text-white border-b border-zinc-800 pb-2 uppercase italic font-bold italic">הצהרת בריאות - חובה</p>
-                <p class="border-r-4 border-primary pr-4 bg-primary/5 py-4 font-bold italic text-white italic">המשתמש מצהיר כי הוא בריא וכשיר לביצוע פעילות גופנית מאומצת.</p>
+    <div id="termsModal" class="fixed inset-0 bg-black/98 z-[200000] hidden items-center justify-center p-4 text-right italic">
+        <div class="bg-zinc-900 border border-zinc-800 p-10 rounded-2xl max-w-4xl w-full text-right relative overflow-y-auto max-h-[90vh]">
+            <button onclick="closeModal('termsModal')" class="absolute top-6 left-6 text-white text-4xl hover:text-primary transition">&times;</button>
+            <h2 class="text-3xl font-black text-primary italic mb-8 uppercase underline">תנאים ובריאות</h2>
+            <div class="text-zinc-300 text-sm leading-relaxed space-y-6 italic text-right">
+                <p class="font-bold text-white border-b border-zinc-800 pb-2 uppercase font-bold">הצהרת בריאות - חובה</p>
+                <p class="border-r-4 border-primary pr-4 bg-primary/5 py-4 font-bold text-white italic">המשתמש מצהיר כי הוא בריא וכשיר לביצוע פעילות גופנית מאומצת.</p>
             </div>
         </div>
     </div>
 
-    <div id="privacyModal" class="fixed inset-0 bg-black/98 z-[200000] hidden items-center justify-center p-4 text-right italic italic">
-        <div class="bg-zinc-900 border border-zinc-800 p-10 rounded-2xl max-w-4xl w-full text-right relative overflow-y-auto max-h-[90vh] italic italic italic">
-            <button onclick="closeModal('privacyModal')" class="absolute top-4 left-4 text-white text-3xl hover:text-primary transition italic italic italic">&times;</button>
-            <h2 class="text-3xl font-black text-primary italic mb-8 uppercase underline italic italic italic italic">מדיניות פרטיות</h2>
+    <div id="privacyModal" class="fixed inset-0 bg-black/98 z-[200000] hidden items-center justify-center p-4 text-right italic">
+        <div class="bg-zinc-900 border border-zinc-800 p-10 rounded-2xl max-w-4xl w-full text-right relative overflow-y-auto max-h-[90vh]">
+            <button onclick="closeModal('privacyModal')" class="absolute top-4 left-4 text-white text-3xl hover:text-primary transition">&times;</button>
+            <h2 class="text-3xl font-black text-primary italic mb-8 uppercase underline">מדיניות פרטיות</h2>
             <div class="text-zinc-300 text-sm leading-relaxed space-y-4 text-right italic">
                 <p>הפרטים נשמרים לצרכי יצירת קשר לשיחת אבחון בלבד.</p>
             </div>
@@ -398,16 +392,14 @@
 
     <script>
         function scrollReviews(amount) {
-            const slider = document.getElementById('review-slider');
-            slider.scrollBy({ left: amount, behavior: 'smooth' });
+            document.getElementById('review-slider').scrollBy({ left: amount, behavior: 'smooth' });
         }
         function captureAns(id, val) {
             const el = document.getElementById('ans-' + id);
             if(el) el.value = val;
         }
         function goToNextQuiz(step, progress) {
-            const steps = document.querySelectorAll('.quiz-step');
-            steps.forEach(s => s.classList.remove('active'));
+            document.querySelectorAll('.quiz-step').forEach(s => s.classList.remove('active'));
             const target = document.getElementById('qst-' + step);
             if (target) {
                 target.classList.add('active');
@@ -417,48 +409,34 @@
         function showNotify() {
             const names = ["יואב", "רועי", "דניאל", "עומר", "יונתן", "אביב", "מתן"];
             const name = names[Math.floor(Math.random() * names.length)];
-            const text = document.getElementById('notify-text');
-            if(text) text.innerText = name + " הגיש מועמדות!";
+            document.getElementById('notify-text').innerText = name + " הגיש מועמדות!";
             document.getElementById('live-notify').classList.add('show');
             setTimeout(() => document.getElementById('live-notify').classList.remove('show'), 5000);
         }
-        setInterval(showNotify, 45000); 
+        setInterval(showNotify, 45000);
 
-        // UPDATED SUBMIT LOGIC FOR NETLIFY (AJAX SUBMISSION TO PREVENT REDIRECT)
         function handleFinalSubmit(event) {
-            if (event) event.preventDefault();
+            event.preventDefault();
             const btn = document.getElementById('submitBtn');
             const form = document.querySelector('form[name="contact"]');
-            const formData = new FormData(form);
-            
             btn.innerHTML = 'שולח...';
             btn.disabled = true;
-
             fetch("/", {
                 method: "POST",
                 headers: { "Content-Type": "application/x-www-form-urlencoded" },
-                body: new URLSearchParams(formData).toString(),
+                body: new URLSearchParams(new FormData(form)).toString(),
             })
             .then(() => {
-                document.getElementById('quiz-internal-flow').classList.add('hidden'); 
+                document.getElementById('quiz-internal-flow').classList.add('hidden');
                 const msg = document.getElementById('successMsg');
-                msg.classList.remove('hidden'); 
+                msg.classList.remove('hidden');
                 msg.classList.add('active');
             })
-            .catch((error) => {
-                console.error("Submission error:", error);
+            .catch(() => {
                 btn.innerHTML = 'שגיאה, נסה שוב';
                 btn.disabled = false;
             });
         }
-        
-        // Attachment of event listener
-        document.addEventListener("DOMContentLoaded", () => {
-           const form = document.querySelector('form[name="contact"]');
-           if(form) {
-               form.addEventListener("submit", handleFinalSubmit);
-           }
-        });
 
         function toggleAx() { document.getElementById('ax-panel').classList.toggle('open'); }
         function toggleBodyClass(cls) { document.body.classList.toggle(cls); }
@@ -466,12 +444,11 @@
         function resetAx() { document.body.className = "font-sans bg-dark text-white antialiased bg-grid text-right"; }
         function openModal(id) { document.getElementById(id).classList.remove('hidden'); document.getElementById(id).classList.add('flex'); document.body.style.overflow = "hidden"; }
         function closeModal(id) { document.getElementById(id).classList.add('hidden'); document.getElementById(id).classList.remove('flex'); document.body.style.overflow = "auto"; }
+
         const observer = new IntersectionObserver((entries) => {
             entries.forEach(entry => { if (entry.isIntersecting) entry.target.classList.add('active'); });
         }, { threshold: 0.1 });
         document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
     </script>
-<!-- Static App Form Collection Script -->
-
 </body>
 </html>
